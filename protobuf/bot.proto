@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+message PlayerState {
+	optional int32 time = 16;
+}
+
+message Bot {
+	repeated PlayerState states = 2;
+}
