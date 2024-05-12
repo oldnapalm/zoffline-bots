@@ -1,5 +1,7 @@
 # zoffline-bots
 
+Download: [bots.zip](https://github.com/oldnapalm/zoffline-bots/releases/download/bots/bots.zip)
+
 This is a collection of bots to be used with [zwift-offline](https://github.com/zoffline/zwift-offline).
 Bots are the same as ghosts. Think of them as replays of activities saved using zwift-offline.
 The difference between bots and ghosts is that ghosts are loaded when you start riding the same route
