@@ -1,0 +1,24 @@
+name: zip
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r bots.zip pace_partners storage
+    - uses: WebFreak001/deploy-nightly@v3.1.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
+      with:
+        upload_url: https://uploads.github.com/repos/oldnapalm/zoffline-bots/releases/155416725/assets{?name,label}
+        release_id: 155416725
+        asset_path: bots.zip
+        asset_name: bots.zip
+        asset_content_type: application/zip
