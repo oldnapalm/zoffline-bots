@@ -16,8 +16,7 @@ if the resulting number of bots is too high, it may cause performance issues or 
 
 Names, nationalities and equipment can be customized by creating a file bot.txt inside the storage folder
 ([bot_teams.txt](https://github.com/oldnapalm/zoffline-bots/blob/main/storage/bot_teams.txt) is a sample file,
-rename it to bot.txt to use it). The scripts [get_pro_names.py](https://github.com/zoffline/zwift-offline/blob/master/scripts/get_pro_names.py)
-and [get_strava_names.py](https://github.com/zoffline/zwift-offline/blob/master/scripts/get_strava_names.py)
+rename it to bot.txt to use it). The script [get_pro_names.py](https://github.com/zoffline/zwift-offline/blob/master/scripts/get_pro_names.py)
 can be used to populate this file.
 
 The script [check_bots.py](https://github.com/oldnapalm/zoffline-bots/blob/main/check_bots.py) removes bots with
