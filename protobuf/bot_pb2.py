@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tbot.proto\"\x1b\n\x0bPlayerState\x12\x0c\n\x04time\x18\x10 \x01(\x05\"#\n\x03\x42ot\x12\x1c\n\x06states\x18\x02 \x03(\x0b\x32\x0c.PlayerState')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tbot.proto\"9\n\x0bPlayerState\x12\r\n\x05speed\x18\x06 \x01(\r\x12\r\n\x05power\x18\x0c \x01(\x05\x12\x0c\n\x04time\x18\x10 \x01(\x05\"#\n\x03\x42ot\x12\x1c\n\x06states\x18\x02 \x03(\x0b\x32\x0c.PlayerState')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'bot_pb2', globals())
@@ -21,7 +21,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _PLAYERSTATE._serialized_start=13
-  _PLAYERSTATE._serialized_end=40
-  _BOT._serialized_start=42
-  _BOT._serialized_end=77
+  _PLAYERSTATE._serialized_end=70
+  _BOT._serialized_start=72
+  _BOT._serialized_end=107
 # @@protoc_insertion_point(module_scope)

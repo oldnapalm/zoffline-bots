@@ -1,6 +1,8 @@
 syntax = "proto2";
 
 message PlayerState {
+	optional uint32 speed = 6;    // millimeters per hour
+	optional int32 power = 12;
 	optional int32 time = 16;
 }
 
