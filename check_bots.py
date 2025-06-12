@@ -5,6 +5,7 @@ import protobuf.bot_pb2
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--average_power_limit', type=float)
 parser.add_argument('-s', '--average_speed_limit', type=float)
+parser.add_argument('-c', '--climbing_limit', type=int)
 args = parser.parse_args()
 
 path = os.path.join('storage', 'bots', 'ghosts')
@@ -28,15 +29,23 @@ for (root, dirs, files) in os.walk(path):
             if gaps > 1:
                 print('Removing %s (%s gaps)' % (full_path, gaps))
                 os.remove(full_path)
+                continue
             if args.average_power_limit:
                 avg_power = sum([s.power for s in bot.states]) / len(bot.states)
                 if avg_power > args.average_power_limit:
                     print('Removing %s (power = %.2f)' % (full_path, avg_power))
                     os.remove(full_path)
+                    continue
             if args.average_speed_limit:
                 avg_speed = sum([s.speed for s in bot.states]) / len(bot.states) / 1000000
                 if avg_speed > args.average_speed_limit:
                     print('Removing %s (speed = %.2f)' % (full_path, avg_speed))
+                    os.remove(full_path)
+                    continue
+            if args.climbing_limit:
+                climbing = bot.states[-1].climbing
+                if climbing > args.climbing_limit:
+                    print('Removing %s (climbing = %s)' % (full_path, climbing))
                     os.remove(full_path)
 print('Done.')
 input()
