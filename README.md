@@ -1,18 +1,18 @@
 # zoffline-bots
 
+Bots are replays of activities saved using zwift-offline.
+
 Download: [bots.zip](https://github.com/oldnapalm/zoffline-bots/releases/download/bots/bots.zip)
 
 To install, download the bots.zip file, unzip it, and place the "storage" folder into the same directory
 that contains the zoffline executable.
 
-This is a collection of bots to be used with [zwift-offline](https://github.com/zoffline/zwift-offline).
-Bots are the same as ghosts. Think of them as replays of activities saved using zwift-offline.
-The difference between bots and ghosts is that ghosts are loaded when you start riding the same route
-as the original ride, while bots are loaded when zwift-offline is launched and stay riding all the time in a loop.
-
 The file [enable_bots.txt](https://github.com/oldnapalm/zoffline-bots/blob/main/storage/enable_bots.txt)
-in the storage folder enables the feature and the number it contains is a multiplier value (use with caution,
-if the resulting number of bots is too high, it may cause performance issues or not work at all).
+in the storage folder enables the feature and the number it contains is a multiplier value.
+
+Type ``.group`` in chat to group the bots, or ``.groupall`` to include duplicates (if using multiplier).
+Type ``.autogroup`` or ``.autogroupall`` to automatically group whenever you change roads.
+Type ``.stopautogroup`` to stop automatic grouping, or ``.disperse`` to randomize positions.
 
 Names, nationalities and equipment can be customized by creating a file bot.txt inside the storage folder
 ([bot_teams.txt](https://github.com/oldnapalm/zoffline-bots/blob/main/storage/bot_teams.txt) is a sample file,
