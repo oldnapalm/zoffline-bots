@@ -3,17 +3,22 @@ name: zip
 on: workflow_dispatch
 
 jobs:
-  build:
+  zip:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: montudor/action-zip@v1
-      with:
-        args: zip -qq -r bots.zip storage
-    - uses: WebFreak001/deploy-nightly@v3.1.0
-      with:
-        upload_url: https://uploads.github.com/repos/oldnapalm/zoffline-bots/releases/155416725/assets{?name,label}
-        release_id: 155416725
-        asset_path: bots.zip
-        asset_name: bots.zip
-        asset_content_type: application/zip
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Zip storage folder
+        run: |
+          zip -r bots.zip storage
+
+      - name: Update tag and upload zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -f bots
+          git push origin bots --force
+          gh release upload bots bots.zip --clobber
